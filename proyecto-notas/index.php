@@ -11,10 +11,10 @@
         <h1>Inicia Sesion 🚀</h1>
         <form action="">
             <label for="nombre" class="labels" >Usuario</label>
-            <input type="text" placeholder="Escribe tu nombre aqui">
+            <input type="text" placeholder="Escribe tu nombre aqui... 👍">
 
             <label for="password" class="labels">Contraseña</label>
-            <input type="password" placeholder="Escribe tu contraseña aqui">
+            <input type="password" placeholder="Escribe tu contraseña aqui... 😶‍🌫️">
 
         </form>
         <button class="button"> ingresar</button>
