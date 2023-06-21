@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+  background-image: url(../img/befunky_2023-5-3_14-48-44.jpg);
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+form{
+    background: rgb(255, 255, 255,0.5);
+    padding: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 1px 5px  black;
+}
+input{
+  margin: 10px;
+  border: solid transparent;
+}
+input:focus{
+  background: #e1aeff97;
+  outline: none;
+}
+.boton{
+  background: #FFAAC9;
+  color: white;
+  border-radius: 5px;
+  height: 5vh;
+  width: 30vh;
+  margin-left: 10%;
+}
+.boton:hover,
+.boton:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #40128B;
+  -webkit-transform: translateY(-0.25em);
+        transform: translateY(-0.25em);
+}
