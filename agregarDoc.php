@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="adminAgr.css">
+    <link rel="stylesheet" href="admin.css">
     <title>Agregar</title>
 </head>
 <body>
     <div class="contenedor">
         <form action="#">
-            <h2>Registrar Administrador</h2>
+            <h2>Registrar Docente</h2>
             <div class="inputbox">
             <label for="Nombre">Nombre: </label>
             <input type="text">
@@ -21,7 +21,17 @@
             <br>
             </div>
             <div class="inputbox">
-            <label for="NombreUsu">Nombre de usuario: </label>
+            <label for="Documento">Documento: </label>
+            <input type="text">
+            <br>
+            </div>
+            <div class="inputbox">
+            <label for="correo">Correo: </label>
+            <input type="text">
+            <br>
+            </div>
+            <div class="inputbox">
+            <label for="Materia">Materia: </label>
             <input type="text">
             <br>
             </div>

@@ -1,7 +1,7 @@
 <?php
 class connection
 {
-    protected $bd;
+    public $bd;
     private $drive = "mysql";
     private $host = "localhost";
     private $namebd = "notas2023";
@@ -15,7 +15,7 @@ class connection
 
         $bd->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Conexión exitosa";
-        return $bd;
+        //return $bd;
         
     }catch(PDOException $e){
         echo "No se puede realizar la conexión".$e->getMessage();

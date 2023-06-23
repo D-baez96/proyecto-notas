@@ -9,30 +9,30 @@ class Administrador extends connection
 
     //funcion para registrar los usuarios 
 
-    public function addAdmi($NombreUsu,$ApellidoUsu, $UsuarioUsu, $PasswordUsu, $Perfil, $EstadoUsu)
+    public function addAdmi($NombreUsu,$ApellidoUsu, $Usuario, $PasswordUsu, $Perfil, $Estado)
     {
     //crear sentncia slq
-    $statement = $this-> bd -> prepare("INSERT INTO usuarios(NombreUsu,ApellidoUsu,Usuario,Contraseña,Perfil,Estado) VALUES( :NombreUsu, :Usuario,  :Contraseña, :'Administrador', :'Activo')");
+    $statement = $this-> bd -> prepare("INSERT INTO usuarios(NombreUsu,ApellidoUsu,Usuario,PasswordUsu,Perfil,Estado) VALUES( :NombreUsu, :ApellidoUsu, :Usuario,  :PasswordUsu, :Perfil, :Estado)");
 
-    $statement -> bindParam(':NombreUsu',$NombreUsu)
-    $statement -> bindParam(':ApellidoUsu',$ApellidoUsu)
-    $statement -> bindParam(':Usuario',$Usuario)
-    $statement -> bindParam(':PasswordUsu',$PasswordUsu)
-    $statement -> bindParam(':Perfil',$Perfil)
-    $statement -> bindParam(':EstadoUsu',$EstadoUsu)
+    $statement -> bindParam(':NombreUsu',$NombreUsu);
+    $statement -> bindParam(':ApellidoUsu',$ApellidoUsu);
+    $statement -> bindParam(':Usuario',$Usuario);
+    $statement -> bindParam(':PasswordUsu',$PasswordUsu);
+    $statement -> bindParam(':Perfil',$Perfil);
+    $statement -> bindParam(':Estado',$Estado);
 
     if($statement ->execute())
     {
         echo "Usuario registrado";
-        header (Location: '../pages/index.php');
+        header ('Location: ../pages/index.php');
     }else{
         echo "Usuario no registrado";
-        header (Location: '../agregar.php');
+        header ('Location: ../agregar.php');
     }
     }
     
 //funcion para consultar todos los usuarios administradores
-    public function getAdmin()
+    public function getAdmin($result)
     {
         $row = null;
         $statement=$this->bd->prepare("SELECT * FROM usuarios WHERE Perfil = 'Administrador'");
@@ -41,10 +41,10 @@ class Administrador extends connection
         {
             $row[] = $result;
         }
-        result $row;
+        return $row;
     }
 //funcion para consultar el usuario de acuerdo a su id
-    public function getIDadmin($id)
+    public function getIDadmin($id,$result)
     {
         $row = null;
         $statement=$this->bd->prepare("SELECT * FROM usuarios WHERE id_usuario = :id and Perfil = 'Administrador'");
@@ -54,19 +54,19 @@ class Administrador extends connection
         {
             $row[] = $result;
         }
-        result $row;
+        
     }
 
     //funcion actualizar los datos de usuario
-    public function updateAd($id,$NombreUsu,$ApellidoUsu, $UsuarioUsu, $PasswordUsu, $EstadoUsu)
+    public function updateAd($id,$NombreUsu,$ApellidoUsu, $Usuario, $PasswordUsu, $EstadoUsu)
     {
         $statement=$this->bd->prepare("UPDATE usuarios SET NombreUsu = :NombreUsu, ApellidoUsu = :ApellidoUsu, Usuario= :UsuarioUsu, Contraseña= :PasswordUsu, Estado = :EstadoUsu WHERE id_usuario = $id");
         $statement -> bindParam(':id', $id);
-        $statement -> bindParam(':NombreUsu',$NombreUsu)
-        $statement -> bindParam(':ApellidoUsu',$ApellidoUsu)
-        $statement -> bindParam(':Usuario',$Usuario)
-        $statement -> bindParam(':PasswordUsu',$PasswordUsu)
-        $statement -> bindParam(':EstadoUsu',$EstadoUsu)
+        $statement -> bindParam(':NombreUsu',$NombreUsu);
+        $statement -> bindParam(':ApellidoUsu',$ApellidoUsu);
+        $statement -> bindParam(':Usuario',$Usuario);
+        $statement -> bindParam(':PasswordUsu',$PasswordUsu);
+        $statement -> bindParam(':EstadoUsu',$EstadoUsu);
         if ($statement->execute())
         {
             echo "Usuario actualizado";
