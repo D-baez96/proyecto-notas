@@ -53,3 +53,67 @@ li:hover{
     text-decoration-line: underline;
     color: white;
 }
+
+/*Table Styles*/
+.container-table{
+    width: 80%;
+    margin: auto;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(54, 52, 52);
+    color: white;
+    margin-top: 40px;
+}
+.main-container table tr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 60px;
+}
+/*formulario editar estilos*/
+
+.form-container{
+    width: 600px;
+    height: 700px;
+    margin: 80px auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border:2px solid #1070e2;
+    border-radius: 10px;
+}
+.form-container label{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.form-container input {
+    width: 300px ;
+    height: 40px;
+    border: 2px solid #1070e2;
+    border-radius: 6px;
+    outline: none;
+    font-weight: bold;
+}
+.form-container input::placeholder {
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+
+.btn-form{
+    width: 80px;
+    height: 40px;
+    border: 1.5px solid #1070e2;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #1070e2;
+}
+.btn-form:hover{
+    background: #2E86C1;
+    border: 1.5px solid #2E86C1;
+    color: white;
+}

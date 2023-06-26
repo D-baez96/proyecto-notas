@@ -20,5 +20,22 @@
             <button class = "btn">Cerrar Sesion</button>
         </ul>
     </nav>
+
+    <div class="container-table">
+        <div class="main-container" >
+            <table class="table">
+                <tr class="table-row">
+                    <th class="text-table">Id usuario</th>
+                    <th class="text-table">Nombre</th>
+                    <th class="text-table">Apellido</th>
+                    <th class="text-table">Perfil</th>
+                    <th class="text-table">Estado</th>
+                    <th class="text-table">Eliminar</th>
+                    <th class="text-table">Actualizar</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
 </body>
 </html>

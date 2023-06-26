@@ -10,11 +10,11 @@
     <div class="container">
         <h1>Inicia Sesion 🚀</h1>
         <form action="">
-            <label for="nombre" class="labels" >Usuario</label>
-            <input type="text" placeholder="Escribe tu nombre aqui... 👍">
+            <label for="nombre" class="labels" name ="usuario">Usuario</label>
+            <input type="text" placeholder="Escribe tu nombre aquí... 👍">
 
-            <label for="password" class="labels">Contraseña</label>
-            <input type="password" placeholder="Escribe tu contraseña aqui... 😶‍🌫️">
+            <label for="password" class="labels" name="password">Contraseña</label>
+            <input type="password" placeholder="Escribe tu contraseña aquí... 😶‍🌫️">
 
         </form>
         <button class="button"> ingresar</button>
