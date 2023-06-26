@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+  background-image: url(../img/docente.jpg);
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+form{
+    background: rgba(228, 168, 90, 0.5);
+    padding: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 1px 5px  black;
+}
+input{
+  margin: 10px;
+  border: solid transparent;
+}
+input:focus{
+  background: #3f19e6af;
+  outline: none;
+}
+.boton{
+    color: var(--color);
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  border: 2px solid #3e19e6fd;
+  font: inherit;
+  line-height: 1;
+  margin-left: 25%;
+  padding: 1em 2em;
+  }
+  boton:hover, boton:focus {
+    border-color: var(--hover);
+    color: #fff;
+  }
+.boton {
+    box-shadow: 0.3em 0.3em 0 0 #3e19e6fd, inset 0.3em 0.3em 0 0 #3d17e4fb;
+    background: transparent;
+    color: white;
+}
+.boton:hover, .boton:focus {
+    box-shadow: 0 0 0 0 #3f19e6af, inset 6em 3.5em 0 0 #3f19e6af;
+    border: 2px solid #3e19e6fd;
+}
