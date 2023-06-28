@@ -35,11 +35,11 @@
                 
             </div>
             <div class="inputbox">
-                <label for="perfil">Estado</label>
+                <label for="Estado">Estado</label>
                     <select name="txtestado" >
                         <option ></option>
-                        <option value="">Activo</option>
-                        <option value="">Inactivo</option>
+                        <option name="txtestado">Activo</option>
+                        <option name="txtestado">Inactivo</option>
                     </select>
             </div>
             <div class="inputbox">

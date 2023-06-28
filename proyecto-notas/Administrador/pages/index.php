@@ -20,5 +20,49 @@
             <button class = "btn">Cerrar Sesion</button>
         </ul>
     </nav>
+
+    <br>
+    <h1>Lista de usuarios</h1>
+    <div class="container2">
+        <table>
+            <tr>
+                <th class="header">Id Usuario</th>
+                <th class="header">Nombre</th>
+                <th class="header">Apellido</th>
+                <th class="header">Usuario</th>
+                <th class="header">Perfil</th>
+                <th class="header">Estado</th>
+                <th class="header">Actualizar</th>
+                <th class="header" >Eliminar</th>
+
+            </tr>
+
+            <tbody>
+                <?php
+                require_once('../../conexion.php');
+                require_once('../modelos/administrador.php');
+
+                $obj =  new Administrador();
+                $datos = $obj-> getadmin();
+
+                foreach ($datos as $key)
+                {
+
+                
+                ?>
+                <tr>
+                    <td><?php echo $key ['id_usuario']?></td>
+                    <td><?php echo $key ['NombreUsu']?></td>
+                    <td><?php echo $key ['ApellidoUsu']?></td>
+                    <td><?php echo $key ['Usuario']?></td>
+                    <td><?php echo $key ['Perfil']?></td>
+                    <td><?php echo $key ['Estado']?></td>
+                    <td ><a href="editar.php?ID=<?php echo $key ['id_usuario']?>" class="enlace">Actualizar</a></td>
+                    <td ><a href="eliminar.php?ID=<?php echo $key ['id_usuario']?>" class="enlace">Eliminar</a></td>
+                </tr>
+        <?php } ?>
+        </tbody>
+        </table>
+    </div>
 </body>
 </html>

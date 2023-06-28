@@ -26,41 +26,50 @@ class Administrador extends connection {
 
     //funcion para consultar usuarios
     public function getadmin() {
-        $row = null;
-        $statement = $this->bd->prepare("SELECT * FROM usuarios WHERE Perfil='Administrador'");
-        $statement->execute();
-        while ($result = $statement->fetch()) {
-            $row[] = $result;
+        $sql= "SELECT * FROM usuarios WHERE Perfil='Administrador'";
+        $result = $this->bd->query($sql);
+        $data = array();
+        if($result->rowCount()>0)
+        {
+        while ($row = $result->fetch()) {
+            $data[] = $row;
         }
-        return $row;
     }
+        return $data;
+    
+}   
 
     //funcion para listar por id especifico
     public function getidad($ID) {
-        $row = null;
-        $statement = $this->bd->prepare("SELECT * FROM usuarios WHERE id_usuario=:ID AND Perfil='Administrador'");
+        $statement = $this->bd->prepare("SELECT * FROM usuarios WHERE id_usuario=:ID");
         $statement->bindParam(':ID', $ID);
         $statement->execute();
-        while ($result = $statement->fetch()) {
-            $row[] = $result;
-        }
-        return $row;
+
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $resultado;
     }
 
     //funcion actualizar los datos del usuario
-    public function updatead($ID, $NombreUsu, $ApellidoUsu, $Usuario, $PasswordUsu, $Estado) {
-        $statement = $this->bd->prepare("UPDATE usuarios SET NombreUsu=:NombreUsu, ApellidoUsu=:ApellidoUsu, Usuario=:Usuario, PasswordUsu=:PasswordUsu, Estado=:Estado WHERE id_usuario=:ID");
+    public function updatead($ID, $NombreUsu, $ApellidoUsu, $Usuario, $PasswordUsu,$Perfil,$Estado) {
+        $statement = $this->bd->prepare("UPDATE usuarios SET id_usuario=:ID, NombreUsu=:NombreUsu, ApellidoUsu=:ApellidoUsu, Usuario=:Usuario, PasswordUsu=:PasswordUsu, Perfil=:Perfil ,Estado=:Estado WHERE id_usuario=$ID");
         $statement->bindParam(':ID', $ID);
         $statement->bindParam(':NombreUsu', $NombreUsu);
         $statement->bindParam(':ApellidoUsu', $ApellidoUsu);
         $statement->bindParam(':Usuario', $Usuario);
         $statement->bindParam(':PasswordUsu', $PasswordUsu);
+        $statement->bindParam(':Perfil', $Perfil);
         $statement->bindParam(':Estado', $Estado);
         if ($statement->execute()) {
-            header('location: ../pages/index.php');
+            echo "<script>
+                alert('El usuario está actualizado');
+                window.location= '../pages/index.php';
+            </script>";
         } else {
-            echo "el usuario no";
-            header('location: ../pages/editar.php');
+            echo "<script>
+                alert('El usuario no está actualizado');
+                window.location= '../pages/editar.php';
+            </script>";
         }
     }
 

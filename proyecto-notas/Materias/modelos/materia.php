@@ -6,20 +6,16 @@ class Materia extends connection {
     }
 
     //funcion para registrar usuarios
-    public function addMateria($NombreUsu, $ApellidoUsu, $Usuario, $PasswordUsu, $Perfil, $Estado) {
-        $statement = $this->bd->prepare("INSERT INTO usuarios (NombreUsu, ApellidoUsu, Usuario, PasswordUsu, Perfil, Estado) VALUES (:NombreUsu, :ApellidoUsu, :Usuario, :PasswordUsu, :Perfil, :Estado)");
-        $statement->bindParam(':NombreUsu', $NombreUsu);
-        $statement->bindParam(':ApellidoUsu', $ApellidoUsu);
-        $statement->bindParam(':Usuario', $Usuario);
-        $statement->bindParam(':PasswordUsu', $PasswordUsu);
-        $statement->bindParam(':Perfil', $Perfil);
-        $statement->bindParam(':Estado', $Estado);
+    public function addMateria($NombreMa) {
+        $statement = $this->bd->prepare("INSERT INTO materias (NombreMa) VALUES (:NombreMa)");
+        $statement->bindParam(':NombreMa', $NombreMa);
+
 
         if ($statement->execute()) {
-            echo "usuario registrado";
+            echo "Materia registrada";
             header('Location: ../pages/index.php');
         } else {
-            echo "usuario no registrado";
+            echo "Materia no registrada";
             header('Location: ../pages/agregar.php');
         }
     }
