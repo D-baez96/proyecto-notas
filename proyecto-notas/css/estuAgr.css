@@ -44,3 +44,11 @@ input:focus{
   -webkit-transform: translateY(-0.25em);
         transform: translateY(-0.25em);
 }
+.inputbox select{
+  border: solid transparent;
+}
+.inputbox select:focus{
+	background: #e1aeff97;
+  border: solid transparent;
+  border-radius: 5px;
+}

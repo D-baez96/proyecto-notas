@@ -54,3 +54,11 @@ input:focus{
     box-shadow: 0 0 0 0 #6b4eeef6, inset 6em 3.5em 0 0 #6b4eeea3;
     border: 2px solid #7f6bdab6;
 }
+.inputbox select{
+  border: solid transparent;
+}
+.inputbox select:focus{
+	background: #6b4eee9a;
+  border: solid transparent;
+  border-radius: 5px;
+}

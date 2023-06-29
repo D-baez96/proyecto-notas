@@ -53,7 +53,7 @@
                     <td><?php echo $key ['ApellidoDoc']?></td>
                     <td><?php echo $key ['DocumentoDoc']?></td>
                     <td><?php echo $key ['CorreoDoc']?></td>
-                    <td><?php echo $key ['Materia']?></td>
+                    <td><?php echo $key ['MateriaDoc']?></td>
                     <td ><a href="editar.php?ID=<?php echo $key ['id_docente']?>" class="enlace">Actualizar</a></td>
                     <td ><a href="eliminar.php?ID=<?php echo $key ['id_docente']?>" class="enlace">Eliminar</a></td>
                 </tr>

@@ -29,6 +29,7 @@ input{
 input:focus{
   background: #e1aeff97;
   outline: none;
+  border-radius: 5px;
 }
 .boton{
   background: #FFAAC9;
@@ -43,4 +44,12 @@ input:focus{
   box-shadow: 0 0.5em 0.5em -0.4em #40128B;
   -webkit-transform: translateY(-0.25em);
           transform: translateY(-0.25em);
+}
+.inputbox select{
+  border: solid transparent;
+}
+.inputbox select:focus{
+	background: #e1aeff97;
+  border: solid transparent;
+  border-radius: 5px;
 }
