@@ -19,5 +19,41 @@
             <button class = "btn">Cerrar Sesion</button>
         </ul>
     </nav>
+
+    <br>
+    <h1>Lista de materias</h1>
+    <div class="container2">
+        <table>
+            <tr>
+                <th class="header">Id Materia</th>
+                <th class="header">Nombre</th>
+                <th class="header">Actualizar</th>
+                <th class="header" >Eliminar</th>
+
+            </tr>
+
+            <tbody>
+                <?php
+                require_once('../../conexion.php');
+                require_once('../modelos/materia.php');
+
+                $obj =  new Materia();
+                $datos = $obj-> getMa();
+
+                foreach ($datos as $key)
+                {
+
+                
+                ?>
+                <tr>
+                    <td><?php echo $key ['id_materia']?></td>
+                    <td><?php echo $key ['NombreMa']?></td>
+                    <td ><a href="editar.php?ID=<?php echo $key ['id_materia']?>" class="enlace">Actualizar</a></td>
+                    <td ><a href="eliminar.php?ID=<?php echo $key ['id_materia']?>" class="enlace">Eliminar</a></td>
+                </tr>
+        <?php } ?>
+        </tbody>
+        </table>
+    </div>
 </body>
 </html>

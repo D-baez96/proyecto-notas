@@ -54,3 +54,18 @@ li:hover{
     text-decoration-line: underline;
     color: white;
 }
+a.enlace{
+    color: black;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+th.header{
+    background: pink;
+    padding: 1%;
+}
+td{
+    text-align: center;
+}

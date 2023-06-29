@@ -22,7 +22,7 @@
             </div>
             <div class="inputbox">
             <label for="Documento">Documento: </label>
-            <input type="text" name="documento" >
+            <input type="number" name="documento" >
             <br>
             </div>
             <div class="inputbox">

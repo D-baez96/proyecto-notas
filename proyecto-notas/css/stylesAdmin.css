@@ -68,3 +68,6 @@ th.header{
     background: pink;
     padding: 1%;
 }
+td{
+    text-align: center;
+}
