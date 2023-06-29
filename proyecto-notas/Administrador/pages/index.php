@@ -13,11 +13,11 @@
         </div>
         <ul class="navbar">
             
-            <li><a href="#">Materias</a></li>
+            <li><a href="../../Materias/pages/agregarMat.php">Materias</a></li>
             <li><a href="#">Cursos</a></li>
-            <li><a href="#">Docentes</a></li>
-            <li><a href="#">Estudiantes</a></li>
-            <button class = "btn">Cerrar Sesion</button>
+            <li><a href="../../Docente/pages/agregarDoc.php">Docentes</a></li>
+            <li><a href="../../Estudiante/pages/agregarEstu.php">Estudiantes</a></li>
+            <button class = "btn"><a href="../../Administrador/pages/agregarAdmin.php" class="aa">Cerrar Sesion</a></button>
         </ul>
     </nav>
 

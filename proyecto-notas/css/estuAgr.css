@@ -28,6 +28,7 @@ input{
 input:focus{
   background: #e1aeff97;
   outline: none;
+  border-radius: 5px;
 }
 .boton{
   background: #FFAAC9;

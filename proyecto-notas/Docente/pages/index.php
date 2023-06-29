@@ -13,7 +13,7 @@
         </div>
         <ul class="navbar">
             
-            <li><a href="#">Materias</a></li>
+            <li><a href="../../Materias/pages/index.php">Materias</a></li>
             <li><a href="#">Agregar Notas</a></li>
             <button class = "btn">Cerrar Sesion</button>
         </ul>
@@ -53,7 +53,7 @@
                     <td><?php echo $key ['ApellidoDoc']?></td>
                     <td><?php echo $key ['DocumentoDoc']?></td>
                     <td><?php echo $key ['CorreoDoc']?></td>
-                    <td><?php echo $key ['MateriaDoc']?></td>
+                    <td><?php echo $key ['Materia']?></td>
                     <td ><a href="editar.php?ID=<?php echo $key ['id_docente']?>" class="enlace">Actualizar</a></td>
                     <td ><a href="eliminar.php?ID=<?php echo $key ['id_docente']?>" class="enlace">Eliminar</a></td>
                 </tr>

@@ -27,17 +27,18 @@ input{
   border: solid transparent;
 }
 input:focus{
-  background: #3f19e6af;
+  background: #6b4eee9a;
   outline: none;
+  border-radius: 5px;
 }
 .boton{
     color: var(--color);
     -webkit-transition: 0.25s;
     transition: 0.25s;
-  border: 2px solid #3e19e6fd;
+  border: 2px solid #5532f5fd;
   font: inherit;
   line-height: 1;
-  margin-left: 25%;
+  margin-left: 30%;
   padding: 1em 2em;
   }
   boton:hover, boton:focus {
@@ -45,11 +46,11 @@ input:focus{
     color: #fff;
   }
 .boton {
-    box-shadow: 0.3em 0.3em 0 0 #3e19e6fd, inset 0.3em 0.3em 0 0 #3d17e4fb;
+    box-shadow: 0.3em 0.3em 0 0 #6b4eeef6, inset 0.3em 0.3em 0 0 #6b4eeef6;
     background: transparent;
     color: white;
 }
 .boton:hover, .boton:focus {
-    box-shadow: 0 0 0 0 #3f19e6af, inset 6em 3.5em 0 0 #3f19e6af;
-    border: 2px solid #3e19e6fd;
+    box-shadow: 0 0 0 0 #6b4eeef6, inset 6em 3.5em 0 0 #6b4eeea3;
+    border: 2px solid #7f6bdab6;
 }

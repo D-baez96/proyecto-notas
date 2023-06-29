@@ -8,6 +8,14 @@
 </head>
 <body>
 <div class="contenedor">
+
+<?php
+require_once('../../conexion.php');
+require_once('../../metodos.php');
+
+$me = new Consulta();
+$do = new Consulta();
+?>
         <form action="..\controladores\agregarEstudiante.php" method="POST">
             <h2>Registrar Estudiante</h2>
             <div class="inputbox">
@@ -27,13 +35,46 @@
             </div>
             <div class="inputbox">
             <label for="Materia">Materia</label>
-            <input type="text" name="materia">
+            <select name="materia" id="">Materia
+                <option>Seleccionar</option>
+                    <?php
+                    $mate = $me-> getMaterias();
+                    if ($mate != null)
+                    {
+                        foreach ($mate as $ma) 
+                        {
+                            ?>
+                            <option value="<?php echo $ma['NombreMa'];?>"> <?php echo $ma['NombreMa'];?></option>
+                            <?php
+                        }
+                    }
+                    ?>
+                
+            </select>
             <br>
             </div>
             <div class="inputbox">
             <label for="Docente">Docente</label>
-            <input type="text" name="docente">
+            <select name="docente">docente
+            <option>Seleccionar</option>
+            <?php
+                    $doce = $do-> getDocentes();
+                    if ($doce != null)
+                    {
+                        foreach ($doce as $doc) 
+                        {
+                            ?>
+                            <option value="<?php echo $doc['NombreDoc']. ' ' . $doc['ApellidoDoc'];?>"> <?php echo $doc['NombreDoc'] . ' ' . $doc['ApellidoDoc'];?></option>
+                            <?php
+                        }
+                    }
+                    ?>
+            </select>
             <br>
+            </div>
+            <div class="inputbox">
+            <label for="fecha">Nota final </label>
+            <input type="number" name="fecha">
             </div>
             <div class="inputbox">
             <label for="fecha">Fecha de registro </label>
@@ -45,12 +86,9 @@
             <input type="email" name="correo">
             <br>
             </div>
-            <div class="inputbox">
-            <label for="Contraseña">Contraseña </label>
-            <input type="password" name="contrasena">
             <br>
             <input type="submit" class="boton">
-            </div>
+
         </form>
     </div>
 </body>

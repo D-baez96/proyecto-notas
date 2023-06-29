@@ -49,7 +49,7 @@
             <br>
             <br>
             <label for="materia">Materia</label>
-            <input type="text" placeholder="Materia" name="materia" value="<?php echo $row['MateriaDoc'] ?>">
+            <input type="text" placeholder="Materia" name="materia" value="<?php echo $row['Materia'] ?>">
             <br>
             <br>
             <label for="contraseña">Contraseña</label>

@@ -11,10 +11,9 @@ $ApellidoEst = $_POST['apellido'];
 $DocumentoEst = $_POST['documento'];
 $CorreoEst = $_POST['correo'];
 $MateriaEst = $_POST['materia'];
-$PasswordEst = MD5($_POST['contrasena']);
 $DocenteEst = $_POST['docente'];
 $Fecha_registro = $_POST['fecha'];
 
-$estudiante -> addEstudiante($NombreEst, $ApellidoEst, $DocumentoEst, $CorreoEst, $MateriaEst, $DocenteEst, $Fecha_registro, $PasswordEst);
+$estudiante -> addEstudiante($NombreEst, $ApellidoEst, $DocumentoEst, $CorreoEst, $MateriaEst, $DocenteEst, $Fecha_registro);
 
 ?>

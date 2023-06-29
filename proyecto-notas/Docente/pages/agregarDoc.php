@@ -8,6 +8,13 @@
 </head>
 <body>
     <div class="contenedor">
+    <?php
+require_once('../../conexion.php');
+require_once('../../metodos.php');
+
+$me = new Consulta();
+
+?>
         <form action="..\controladores\agregarDocente.php" method="POST">
             <h2>Registrar Docente</h2>
             <div class="inputbox">
@@ -31,8 +38,23 @@
             <br>
             </div>
             <div class="inputbox">
-            <label for="Materia">Materia: </label>
-            <input type="text" name="materia">
+            <label for="Materia">Materia</label>
+            <select name="materia" id="">Materia
+                <option>Seleccionar</option>
+                    <?php
+                    $mate = $me-> getMaterias();
+                    if ($mate != null)
+                    {
+                        foreach ($mate as $ma) 
+                        {
+                            ?>
+                            <option value="<?php echo $ma['NombreMa'];?>"> <?php echo $ma['NombreMa'];?></option>
+                            <?php
+                        }
+                    }
+                    ?>
+                
+            </select>
             <br>
             </div>
             <div class="inputbox">

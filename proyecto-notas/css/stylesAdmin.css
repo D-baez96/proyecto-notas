@@ -30,6 +30,9 @@ a{
 a .enlace{
     color: black;
 }
+.enlace:hover{
+    color: pink;
+}
 .text{
     width: 100%;
     margin: 30px;
@@ -47,7 +50,7 @@ a .enlace{
     color: white;
     cursor: pointer;
 }
-.btn:hover{
+a.aa:hover {
     background: white;
     border: 1.5px solid #2E86C1;
     color: #2E86C1;
@@ -71,3 +74,4 @@ th.header{
 td{
     text-align: center;
 }
+
