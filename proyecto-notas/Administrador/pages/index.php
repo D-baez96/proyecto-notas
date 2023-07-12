@@ -1,3 +1,5 @@
+<?php
+include_once("../../Usuarios/modelos/validar.php");?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,12 +19,14 @@
             <li><a href="#">Cursos</a></li>
             <li><a href="../../Docente/pages/agregarDoc.php">Docentes</a></li>
             <li><a href="../../Estudiante/pages/agregarEstu.php">Estudiantes</a></li>
-            <button class = "btn"><a href="../../Administrador/pages/agregarAdmin.php" class="aa">Cerrar Sesion</a></button>
+            <button class = "btn"><a href="../../Usuarios/modelos/Salir.php" class="aa">Cerrar Sesion</a></button>
         </ul>
     </nav>
 
     <br>
+    
     <h1>Lista de usuarios</h1>
+    <h2>Bienvenido: <?php echo $_SESSION['usuario']?></h2>
     <div class="container2">
         <table>
             <tr>

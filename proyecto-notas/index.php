@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +9,16 @@
 </head>
 <body>
     <div class="contenedor">
-    <h2>Inicia sesión</h2
-    <form action="">
+    <h2>Inicia sesión</h2>
+    <form action="Usuarios/modelos/ControlUsuarios.php" method ="POST">
         <label for="Usuario">Nombre apellido </label>
-        <input type="text">
+        <input type="text" name="Usuario">
         <br>
-        <label for="Contraseña">Contraseña: </label>
-        <input type="password">
+        <label for="Contrasena">Contraseña: </label>
+        <input type="password" name ="Contrasena">
         <a href="#">Contraseña olvidada</a>
+        <input type="submit" value="Iniciar Sesion">
     </form>
     </div>
 </body>
 </html>
-
