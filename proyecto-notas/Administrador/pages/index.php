@@ -26,7 +26,7 @@ include_once("../../Usuarios/modelos/validar.php");?>
     <br>
     
     <h1>Lista de usuarios</h1>
-    <h2>Bienvenido: <?php echo $_SESSION['usuario']?></h2>
+    <h2>Hola <?php echo $_SESSION['usuario']?></h2>
     <div class="container2">
         <table>
             <tr>

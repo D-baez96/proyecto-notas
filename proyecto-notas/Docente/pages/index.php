@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,11 +16,12 @@
             
             <li><a href="../../Materias/pages/index.php">Materias</a></li>
             <li><a href="#">Agregar Notas</a></li>
-            <button class = "btn">Cerrar Sesion</button>
+            <button class = "btn"><a href="../../Usuarios/modelos/Salir.php" class="aa">Cerrar Sesion</a></button>
         </ul>
     </nav>
     <br>
     <h1>Lista de docentes</h1>
+    <h2>Hola <?php echo $_SESSION['usuario']?></h2>
     <div class="container2">
         <table>
             <tr>

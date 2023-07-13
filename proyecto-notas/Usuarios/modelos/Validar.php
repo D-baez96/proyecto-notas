@@ -4,7 +4,7 @@
   if(!$_SESSION['validacion']){
     echo
     "<script>
-      alert('Solo para Usuarios Registrados 😡');
+      alert('Solo para Usuarios Registrados');
       window.location='../../index.php';
     </script>";
   }
@@ -13,7 +13,7 @@
     session_destroy();
     echo
     "<script>
-      alert('Sesion Expirada, ingrese de nuevo 😺');
+      alert('Sesion Expirada');
       window.location='../../index.php';
     </script>";
   }

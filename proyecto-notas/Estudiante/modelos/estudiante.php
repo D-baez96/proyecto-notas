@@ -7,7 +7,7 @@ class Estudiante extends connection {
 
     //funcion para registrar usuarios
     public function addEstudiante($NombreEst, $ApellidoEst, $DocumentoEst, $CorreoEst, $MateriaEst, $DocenteEst, $Fecha_registro) {
-        $statement = $this->bd->prepare("INSERT INTO estudiantes (NombreEs, ApellidoEs, Documento, Correo, Materia, Docente,Fecha_registro) VALUES (:NombreEs, :ApellidoEs, :Documento, :Correo, :Materia, :Docente, :Fecha_registro)");
+        $statement = $this->bd->prepare("INSERT INTO estudiante (NombreEs, ApellidoEs, Documento, Correo, Materia, Docente,Fecha_registro) VALUES (:NombreEs, :ApellidoEs, :Documento, :Correo, :Materia, :Docente, :Fecha_registro)");
         $statement->bindParam(':NombreEs', $NombreEst);
         $statement->bindParam(':ApellidoEs', $ApellidoEst);
         $statement->bindParam(':Documento', $DocumentoEst);

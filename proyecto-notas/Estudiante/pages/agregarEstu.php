@@ -55,16 +55,16 @@ $do = new Consulta();
             </div>
             <div class="inputbox">
             <label for="Docente">Docente</label>
-            <select name="docente">docente
+            <select name="docente">
             <option>Seleccionar</option>
             <?php
-                    $doce = $do-> getDocentes();
+                    $doce = $do-> getDocente();
                     if ($doce != null)
                     {
                         foreach ($doce as $doc) 
                         {
                             ?>
-                            <option value="<?php echo $doc['NombreDoc']. ' ' . $doc['ApellidoDoc'];?>"> <?php echo $doc['NombreDoc'] . ' ' . $doc['ApellidoDoc'];?></option>
+                            <option value="<?php echo $doc['NombreDoc'];?>"> <?php echo $doc['NombreDoc'];?></option>
                             <?php
                         }
                     }

@@ -15,6 +15,7 @@ class connection
 
         $this-> bd->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $this-> bd;
+        echo "Conexion exitosa";
         
     }catch(PDOException $e){
         echo "No se puede realizar la conexión".$e->getMessage();

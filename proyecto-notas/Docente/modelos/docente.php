@@ -6,13 +6,13 @@ class Docente extends connection {
     }
 
     //funcion para registrar usuarios
-    public function addDocente($NombreDoc, $ApellidoDoc, $DocumentoDoc, $CorreoDoc, $Materia, $PasswordDoc) {
-        $statement = $this->bd->prepare("INSERT INTO docentes (NombreDoc, ApellidoDoc, DocumentoDoc, CorreoDoc, Materia, PasswordDoc) VALUES (:NombreDoc, :ApellidoDoc, :DocumentoDoc, :CorreoDoc, :Materia, :PasswordDoc)");
+    public function addDocente($NombreDoc, $ApellidoDoc, $DocumentoDoc, $CorreoDoc, $MateriaDoc, $PasswordDoc) {
+        $statement = $this->bd->prepare("INSERT INTO docente (NombreDoc, ApellidoDoc, DocumentoDoc, CorreoDoc, MateriaDoc, PasswordDoc) VALUES (:NombreDoc, :ApellidoDoc, :DocumentoDoc, :CorreoDoc, :MateriaDoc, :PasswordDoc)");
         $statement->bindParam(':NombreDoc', $NombreDoc);
         $statement->bindParam(':ApellidoDoc', $ApellidoDoc);
         $statement->bindParam(':DocumentoDoc', $DocumentoDoc);
         $statement->bindParam(':CorreoDoc', $CorreoDoc);
-        $statement->bindParam(':Materia', $Materia);
+        $statement->bindParam(':MateriaDoc', $MateriaDoc);
         $statement->bindParam(':PasswordDoc', $PasswordDoc);
 
         if ($statement->execute()) {
@@ -26,7 +26,7 @@ class Docente extends connection {
 
     //funcion para consultar usuarios
     public function getDocente() {
-        $sql= "SELECT * FROM docentes";
+        $sql= "SELECT * FROM docente";
         $result = $this->bd->query($sql);
         $dataDo = array();
         if($result->rowCount()>0)
@@ -41,7 +41,7 @@ class Docente extends connection {
 
     //funcion para listar por id especifico
     public function getidDo($ID) {
-        $statement = $this->bd->prepare("SELECT * FROM docentes WHERE id_docente=:ID");
+        $statement = $this->bd->prepare("SELECT * FROM docente WHERE id_docente=:ID");
         $statement->bindParam(':ID', $ID);
         $statement->execute();
 
@@ -51,14 +51,14 @@ class Docente extends connection {
     }
 
     //funcion actualizar los datos del usuario
-    public function updateDocente($ID, $NombreDoc, $ApellidoDoc, $DocumentoDoc, $CorreoDoc, $Materia, $PasswordDoc) {
-        $statement = $this->bd->prepare("UPDATE docentes SET id_docente=:ID, NombreDoc=:NombreDoc, ApellidoDoc=:ApellidoDoc, DocumentoDoc=:DocumentoDoc, CorreoDoc=:CorreoDoc, Materia=:Materia ,PasswordDoc=:PasswordDoc WHERE id_docente=$ID");
+    public function updateDocente($ID, $NombreDoc, $ApellidoDoc, $DocumentoDoc, $CorreoDoc, $MateriaDoc, $PasswordDoc) {
+        $statement = $this->bd->prepare("UPDATE docente SET id_docente=:ID, NombreDoc=:NombreDoc, ApellidoDoc=:ApellidoDoc, DocumentoDoc=:DocumentoDoc, CorreoDoc=:CorreoDoc, MateriaDoc=:MateriaDoc ,PasswordDoc=:PasswordDoc WHERE id_docente=$ID");
         $statement->bindParam(':ID', $ID);
         $statement->bindParam(':NombreDoc', $NombreDoc);
         $statement->bindParam(':ApellidoDoc', $ApellidoDoc);
         $statement->bindParam(':DocumentoDoc', $DocumentoDoc);
         $statement->bindParam(':CorreoDoc', $CorreoDoc);
-        $statement->bindParam(':Materia', $Materia);
+        $statement->bindParam(':MateriaDoc', $MateriaDoc);
         $statement->bindParam(':PasswordDoc', $PasswordDoc);
         if ($statement->execute()) {
             echo "<script>
@@ -75,7 +75,7 @@ class Docente extends connection {
 
     //funcion eliminar usuario
     public function deleteDocente($ID) {
-        $statement = $this->bd->prepare("DELETE FROM docentes WHERE id_docente=:ID");
+        $statement = $this->bd->prepare("DELETE FROM docente WHERE id_docente=:ID");
         $statement->bindParam(':ID', $ID);
         if ($statement->execute()) {
             echo "Docente eliminado";

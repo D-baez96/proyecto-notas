@@ -20,9 +20,9 @@ class Consulta extends connection
         return $row;
 
     }
-    public function getDocentes()
+    public function getDocente()
     {
-        $sql = "SELECT * FROM docentes ";
+        $sql = "SELECT * FROM docente";
         $result = $this->bd->query($sql);
         if($result -> rowCount()>0)
         {
