@@ -64,7 +64,7 @@ $do = new Consulta();
                         foreach ($doce as $doc) 
                         {
                             ?>
-                            <option value="<?php echo $doc['NombreDoc'];?>"> <?php echo $doc['NombreDoc'];?></option>
+                            <option value="<?php echo $doc['NombreDoc'].' '. $doc['ApellidoDoc'];?>"> <?php echo $doc['NombreDoc'].' '. $doc['ApellidoDoc'];?></option>
                             <?php
                         }
                     }

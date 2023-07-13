@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="contenedor">
-    <form action="Usuarios/modelos/ControlUsuarios.php" method ="POST">
+    <form action="Usuarios/controladores/controlUsuario.php" method ="POST">
     <h2>Inicia sesión</h2>
         <label for="Usuario">Nombre apellido </label>
         <input type="text" name="Usuario">

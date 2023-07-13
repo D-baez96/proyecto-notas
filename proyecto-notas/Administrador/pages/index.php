@@ -1,5 +1,4 @@
-<?php
-include_once("../../Usuarios/modelos/validar.php");?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -9,7 +9,7 @@ $admin1 = new Administrador();
 $NombreUsu = $_POST['nombre'];
 $ApellidoUsu = $_POST['apellido'];
 $Usuario = $_POST['usuario'];
-$PasswordUsu = MD5($_POST['contrasena']);
+$PasswordUsu =$_POST['contrasena'];
 $Perfil = $_POST['txtperfil'];
 $Estado = $_POST['txtestado'];
 
