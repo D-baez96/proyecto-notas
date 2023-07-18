@@ -1,7 +1,14 @@
 <?php
+// BindParam: Se vincula la variable al parametro y en el momento de hacer el execute es cuando se asigna el valor de la variable a ese parámetro 
 include_once('../../conexion.php');
+session_start();
 class Usuario extends connection 
 {
+  //Validar el estado de los diferentes roles
+  private $loggedIn = false; //Estado de inicio de sesión
+  private $isAdmin = false; // Estado de administrador
+  private $isDocente = false; //Esatdo de docente
+
   public function __construct()
   {
     $this->bd=parent::__construct();
@@ -9,55 +16,58 @@ class Usuario extends connection
 
   public function login($Usuario,$Password)
   {
-    $statement = $this->bd->prepare("SELECT * FROM  usuarios WHERE Usuario=:Usuario AND PasswordUsu=:PasswordUsu");
-//Se vincula la variable al parametro y en el momento de hacer el execute es cuando se asigna el valor de la variable a ese parámetro 
-    $statement->bindParam(':Usuario',$Usuario);
-    $statement->bindParam(':PasswordUsu',$Password);
-    $statement->execute();
+    $statement= $this->bd->prepare("SELECT * FROM usuarios WHERE Usuario = ?");
+    $statement -> execute([$Usuario]);
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if($statement->rowCount() == 1)
+    if($user && password_verify($Password,$user['password']))
     {
-        $result=$statement->fetch();
-        $_SESSION['usuario']=$result['NombreUsu'].' '.$result['ApellidoUsu'];
-        $_SESSION['id']=$result['id_usuario'];
-        $_SESSION['Perfil']=$result['Perfil'];
-        $_SESSION['start']=time();
-        $_SESSION['expire']=$_SESSION['start'] + (1*60);
+      //iniciar sesión
+        $_SESSION['id_usuario']=$user['id_usuario'];
+        $_SESSION['username']=$user['Usuario'];
+        $_SESSION['role']=$user['Perfil'];
+        $_SESSION['validar']=true;
+        $_SESSION['nombre']=$user['NombreUsu'].' '.$user['ApellidoUsu'];
 
-        return true;
     }
-
-    return false;
   }
 
   public function validarSesion()
   {
-    if($_SESSION['id']==null)
+    if($_SESSION['id_usuario'])
     {
-        echo "<script>alert('Datos incorrectos');
-        window.location='../../index.php';</script>";
-    }
-    $now = time();
-    if($now > $_SESSION['expire'])
-    {
+      if(!isset($_SESSION['start']))
+      {
+        $_SESSION[$start] = time();
+      }else if(time() - $_SESSION['start'] > 60)
+      {
         session_destroy();
-        echo "<script>alert('Debe ingresar nuevamente');
-        window.location='../../index.php';</script>";
+        echo "<script> alert('Cierre de sesión por inactividad'); windows.location='../../index.php';</script>";
+        $_SESSION['validar'] == false;
+      }
+      $_SESSION['start']= time();
     }
   }
   
   public function cerrarSesion()
   {
-    session_start();
-    session_destroy();
-
-    echo "<script>alert('Cierre de sesión exitoso');
-    window.location='../../index.php';</script>";
+    session_unset(); //para que se cierre la sesion
+    session_destroy(); //cierra todas las variables SESSION
   }
 
-  public function validarRoles()
+  public function isloggedIn()
   {
-    
+    return isset($_SESSION['id_usuario']);
+  }
+
+  public function isAdmin()
+  {
+    return $this->isloggedIn() && $_SESSION['role'] == 'Administrador';
+  }
+
+  public function isDocente()
+  {
+    return $this->isloggedIn() && $_SESSION['role'] == 'Docente';
   }
 }
 ?>

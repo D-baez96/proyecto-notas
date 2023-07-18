@@ -11,7 +11,7 @@ $ApellidoDoc = $_POST['apellido'];
 $DocumentoDoc = $_POST['documento'];
 $CorreoDoc = $_POST['correo'];
 $MateriaDoc = $_POST['materia'];
-$PasswordDoc = MD5($_POST['contrasena']);
+$PasswordDoc = $_POST['contrasena'];
 
 $docente -> addDocente($NombreDoc, $ApellidoDoc, $DocumentoDoc, $CorreoDoc, $MateriaDoc, $PasswordDoc);
 

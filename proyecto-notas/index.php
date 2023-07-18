@@ -11,7 +11,7 @@
     <div class="contenedor">
     <form action="Usuarios/controladores/controlUsuario.php" method ="POST">
     <h2>Inicia sesión</h2>
-        <label for="Usuario">Nombre apellido </label>
+        <label for="Usuario">Usuario </label>
         <input type="text" name="Usuario">
         <br>
         <label for="Contrasena">Contraseña: </label>

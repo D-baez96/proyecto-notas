@@ -1,5 +1,5 @@
 <?php
-include_once("../../Usuarios/controladores/controlUsuarios.php");?>
+include_once("../../Usuarios/controladores/controlUsuario.php");?>
 <!DOCTYPE html>
 <html lang="en">    
 <head>

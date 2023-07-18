@@ -1,4 +1,14 @@
+<?php
+include_once('../../Usuarios/modelos/Usuario.php');
 
+$model= new Usuario();
+$model -> validarSesion();
+if(!$_SESSION['validar'])
+{
+    print "<script>alert(\"Es para usuarios registrados\");
+    window.location='../../index.php';</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
