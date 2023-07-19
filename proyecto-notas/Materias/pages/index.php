@@ -19,7 +19,7 @@ include_once('../../Usuarios/modelos/Usuario.php');
             <li><a href="#">Cursos</a></li>
             <li><a href="../../Docente/pages/agregarDoc.php">Docentes</a></li>
             <li><a href="../../Estudiante/pages/agregarEstu.php">Estudiantes</a></li>
-            <button class = "btn">Cerrar Sesion</button>
+            <button class = "btn"><a href="../../Usuarios/modelos/Salir.php">Cerrar Sesion</a></button>
         </ul>
     </nav>
 
