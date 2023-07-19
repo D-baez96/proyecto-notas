@@ -11,6 +11,7 @@ $ApellidoDoc = $_POST['apellido'];
 $DocumentoDoc = $_POST['documento'];
 $CorreoDoc = $_POST['correo'];
 $MateriaDoc = $_POST['materia'];
+$Perfil = $_POST['txtperfil'];
 $PasswordDoc = $_POST['contrasena'];
 
 $docente -> addDocente($NombreDoc, $ApellidoDoc, $DocumentoDoc, $CorreoDoc, $MateriaDoc, $PasswordDoc);

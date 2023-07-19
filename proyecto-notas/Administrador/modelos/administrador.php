@@ -7,11 +7,15 @@ class Administrador extends connection {
 
     //funcion para registrar usuarios
     public function addAdmi($NombreUsu, $ApellidoUsu, $Usuario, $PasswordUsu, $Perfil, $Estado) {
+
+        $hashedPassword = password_hash($PasswordUsu, PASSWORD_DEFAULT);
+
+        
         $statement = $this->bd->prepare("INSERT INTO usuarios (NombreUsu, ApellidoUsu, Usuario, PasswordUsu, Perfil, Estado) VALUES (:NombreUsu, :ApellidoUsu, :Usuario, :PasswordUsu, :Perfil, :Estado)");
         $statement->bindParam(':NombreUsu', $NombreUsu);
         $statement->bindParam(':ApellidoUsu', $ApellidoUsu);
         $statement->bindParam(':Usuario', $Usuario);
-        $statement->bindParam(':PasswordUsu', $PasswordUsu);
+        $statement->bindParam(':PasswordUsu', $hashedPassword);
         $statement->bindParam(':Perfil', $Perfil);
         $statement->bindParam(':Estado', $Estado);
 

@@ -1,3 +1,6 @@
+<?php
+include_once('../../Usuarios/modelos/Usuario.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +25,7 @@
 
     <br>
     <h1>Lista de materias</h1>
+    <h2>Hola <?php echo $_SESSION['nombre']?></h2>
     <div class="container2">
         <table>
             <tr>

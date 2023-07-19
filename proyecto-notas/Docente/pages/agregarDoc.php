@@ -39,6 +39,15 @@ $me = new Consulta();
             <input type="email" name="correo">
             <br>
             </div>
+            <div class="inputbox">Perfil:</label>
+                <label for="perfil">
+                    <select name="txtperfil" >
+                    <option ></option>
+                        <option>Administrador</option>
+                        <option>Docente</option>
+                    </select>
+                
+            </div>
             <div class="inputbox">
             <label for="Materia">Materia</label>
             <select name="materia" id="">Materia
@@ -60,11 +69,20 @@ $me = new Consulta();
             <br>
             </div>
             <div class="inputbox">
+                <label for="Estado">Estado</label>
+                    <select name="txtestado" >
+                        <option ></option>
+                        <option name="txtestado">Activo</option>
+                        <option name="txtestado">Inactivo</option>
+                    </select>
+            </div>
+            <div class="inputbox">
             <label for="Contraseña">Contraseña </label>
             <input type="password" name="contrasena">
             <br>
             <input type="submit" class="boton">
             </div>
+            
         </form>
     </div>
 </body>

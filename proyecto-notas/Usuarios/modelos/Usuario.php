@@ -14,21 +14,20 @@ class Usuario extends connection
     $this->bd=parent::__construct();
   }
 
-  public function login($Usuario,$Password)
+  public function login($Usuario, $Password)
   {
-    $statement= $this->bd->prepare("SELECT * FROM usuarios WHERE Usuario = ?");
-    $statement -> execute([$Usuario]);
+    $statement = $this->bd->prepare("SELECT * FROM usuarios WHERE Usuario = ?");
+    $statement->execute([$Usuario]);
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if($user && password_verify($Password,$user['password']))
+    if ($user && password_verify($Password, $user['PasswordUsu'])) // Utilizamos el hash almacenado en la base de datos
     {
       //iniciar sesión
-        $_SESSION['id_usuario']=$user['id_usuario'];
-        $_SESSION['username']=$user['Usuario'];
-        $_SESSION['role']=$user['Perfil'];
-        $_SESSION['validar']=true;
-        $_SESSION['nombre']=$user['NombreUsu'].' '.$user['ApellidoUsu'];
-
+      $_SESSION['id_usuario'] = $user['id_usuario'];
+      $_SESSION['username'] = $user['Usuario'];
+      $_SESSION['role'] = $user['Perfil'];
+      $_SESSION['validar'] = true;
+      $_SESSION['nombre'] = $user['NombreUsu'] . ' ' . $user['ApellidoUsu'];
     }
   }
 
@@ -38,7 +37,7 @@ class Usuario extends connection
     {
       if(!isset($_SESSION['start']))
       {
-        $_SESSION[$start] = time();
+        $_SESSION['start'] = time();
       }else if(time() - $_SESSION['start'] > 60)
       {
         session_destroy();

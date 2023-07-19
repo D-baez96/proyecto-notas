@@ -1,14 +1,7 @@
 <?php
 include_once('../../Usuarios/modelos/Usuario.php');
-
-$model= new Usuario();
-$model -> validarSesion();
-if(!$_SESSION['validar'])
-{
-    print "<script>alert(\"Es para usuarios registrados\");
-    window.location='../../index.php';</script>";
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +28,7 @@ if(!$_SESSION['validar'])
     <br>
     
     <h1>Lista de usuarios</h1>
-    <h2>Hola <?php echo $_SESSION['usuario']?></h2>
+    <h2>Hola <?php echo $_SESSION['nombre']?></h2>
     <div class="container2">
         <table>
             <tr>

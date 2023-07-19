@@ -14,10 +14,10 @@ if($_SERVER['REQUEST_METHOD']==='POST')
     //redirigir al controlador de acuerdo al rol 
     if($usu->isloggedIn())
     {
-        if($usu->idAdmin())
+        if($usu->isAdmin())
         {
             header('Location: ../../Administrador/pages/index.php');
-        }elseif($usu->idDocente())
+        }elseif($usu->isDocente())
         {
             header('Location: ../../Materias/pages/index.php');
         }
